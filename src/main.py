@@ -13,4 +13,5 @@ if __name__ == "main":
 
     #GET /orgs/:org/repos
     res = requests.get(f"{GITHUB_API_BASE_URL}/orgs/magnublo-test-organization/repos")
+    print("hei")
     print(res)
