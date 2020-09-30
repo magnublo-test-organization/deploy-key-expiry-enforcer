@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     web_session = requests.session()
     access_token = sys.argv[1]
-    web_session.headers["Authorization"] = f"Bearer {access_token}"
+    web_session.headers["Authorization"] = f"token {access_token}"
 
     #GET /orgs/:org/repos
     res = web_session.get(f"{GITHUB_API_BASE_URL}/orgs/magnublo-test-organization/repos")
