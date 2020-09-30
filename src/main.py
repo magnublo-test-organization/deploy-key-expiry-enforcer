@@ -16,4 +16,7 @@ if __name__ == "__main__":
 
     repositories = json.loads(res.text)
     deploy_key_api_urls = [r["keys_url"] for r in repositories]
-    print(res.text)
+
+    for deploy_key_api_url in deploy_key_api_urls:
+        res = requests.get(deploy_key_api_url)
+        print(res.text)
