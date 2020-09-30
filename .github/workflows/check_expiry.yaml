@@ -1,4 +1,4 @@
-name: Notify and enforce expiry of deploy keys
+name: Notify expiry of deploy keys
 
 # This workflow is triggered on pushes to the repository.
 on:
@@ -19,5 +19,5 @@ jobs:
 
       - name: Run python
         run: |
-          chmod 700 $GITHUB_WORKSPACE/src/main.py
-          $GITHUB_WORKSPACE/src/main.py ${{ secrets.ORG_ADMIN_PATH_WITH_REPO_SCOPE }}
+          chmod 700 $GITHUB_WORKSPACE/src/notify_expiry.py
+          $GITHUB_WORKSPACE/src/notify_expiry.py ${{ secrets.ORG_ADMIN_PATH_WITH_REPO_SCOPE }}
