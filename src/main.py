@@ -5,7 +5,7 @@ import requests
 
 GITHUB_API_BASE_URL = "https://api.github.com"
 
-if __name__ == "main":
+if __name__ == "__main__":
 
     web_session = requests.session()
     access_token = sys.argv[1]
@@ -13,5 +13,4 @@ if __name__ == "main":
 
     #GET /orgs/:org/repos
     res = requests.get(f"{GITHUB_API_BASE_URL}/orgs/magnublo-test-organization/repos")
-    print("hei")
-    print(res)
+    print(res.text)
