@@ -57,8 +57,10 @@ def notify_expiry(deploy_key: Dict, collaborator_emails: Set[str]):
 
     if days_until_expiry < 10:  # If less than 10 days to expiry, notify all collaborators every day
         notify_collaborators(collaborator_emails, days_until_expiry)
+        return
     elif days_until_expiry < 30 and days_until_expiry % 7 == 0:  # If less than 30 days to expiry, notify all collabors weekly
         notify_collaborators(collaborator_emails, days_until_expiry)
+        return
 
 
 if __name__ == "__main__":
