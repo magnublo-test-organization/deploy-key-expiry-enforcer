@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     web_session = requests.session()
     access_token = sys.argv[1]
-    #web_session.headers["Authorization"] = f"Bearer {access_token}"
+    web_session.headers["Authorization"] = f"Bearer {access_token}"
 
     #GET /orgs/:org/repos
     res = web_session.get(f"{GITHUB_API_BASE_URL}/orgs/magnublo-test-organization/repos")
@@ -18,5 +18,5 @@ if __name__ == "__main__":
     deploy_key_api_urls = [r["keys_url"] for r in repositories]
 
     for deploy_key_api_url in deploy_key_api_urls:
-        res = requests.get(deploy_key_api_url)
+        res = web_session.get(deploy_key_api_url)
         print(res.text)
