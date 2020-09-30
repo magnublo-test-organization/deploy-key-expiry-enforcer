@@ -20,5 +20,4 @@ jobs:
       - name: Run python
         run: |
           chmod 700 $GITHUB_WORKSPACE/src/main.py
-          cat {{ secrets.PERSONAL_ACCESS_TOKEN_WITH_ORG_WRITE }}
-          $GITHUB_WORKSPACE/src/main.py {{ secrets.PERSONAL_ACCESS_TOKEN_WITH_ORG_WRITE }}
+          $GITHUB_WORKSPACE/src/main.py ${{ secrets.PERSONAL_ACCESS_TOKEN_WITH_ORG_WRITE }}
