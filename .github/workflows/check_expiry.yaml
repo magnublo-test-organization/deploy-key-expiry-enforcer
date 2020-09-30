@@ -19,5 +19,6 @@ jobs:
 
       - name: Run python
         run: |
+          which python
           chmod 700 $GITHUB_WORKSPACE/src/main.py
           $GITHUB_WORKSPACE/src/main.py {{ secrets.PERSONAL_ACCESS_TOKEN_WITH_ORG_WRITE }}
