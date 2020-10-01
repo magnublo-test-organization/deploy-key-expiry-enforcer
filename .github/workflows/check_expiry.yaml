@@ -20,4 +20,4 @@ jobs:
       - name: Run python
         run: |
           chmod 700 $GITHUB_WORKSPACE/src/notify_expiry.py
-          $GITHUB_WORKSPACE/src/notify_expiry.py ${{ secrets.ORG_ADMIN_PATH_WITH_REPO_SCOPE }}
+          $GITHUB_WORKSPACE/src/notify_expiry.py ${{ secrets.ORG_ADMIN_PAT_WITH_REPO_SCOPE }}

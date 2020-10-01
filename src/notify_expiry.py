@@ -69,6 +69,8 @@ if __name__ == "__main__":
     access_token = sys.argv[1]
     web_session.headers["Authorization"] = f"token {access_token}"
 
+    # Should be using GraphQL here
+
     res = web_session.get(f"{GITHUB_API_BASE_URL}/orgs/magnublo-test-organization/repos")
 
     repositories = json.loads(res.text)
